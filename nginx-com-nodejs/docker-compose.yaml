@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./mysql:/var/lib/mysql
+    env_file:
+      - ./node-api/.env
+    networks:
+      - nginx-com-nodejs
+
+networks:
+  nginx-com-nodejs:
+    driver: bridge
