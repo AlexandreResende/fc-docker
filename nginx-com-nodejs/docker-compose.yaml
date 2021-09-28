@@ -6,8 +6,6 @@ services:
     build: ./node-api
     env_file:
       - ./node-api/.env
-    # ports:
-    #   - "3000:3000"
     networks:
       - nginx-com-nodejs
     depends_on:

@@ -9,5 +9,8 @@ COPY environment.js .
 RUN npm install
 
 COPY app.js .
+COPY .sequelizerc .
+COPY config.json .
+COPY src ./src
 
 ENTRYPOINT [ "npm", "start" ]
