@@ -13,3 +13,9 @@ Gere o docker-compose de uma forma que basta apenas rodarmos: docker-compose up 
 
 Suba tudo em um repositório e faça a entrega.
 ```
+
+### Não há a necessidade de inserir os dados no banco pois isso está sendo feito de maneira aleatória no endpoint listagem
+
+sei que isso é uma má prática, mas é para fazer com que você não precise ficar entrando no banco de dados
+pra fazer essa operação. Do mesmo jeito que a migration é rodada automaticamente, sem a necessidade de gerar
+a tabela na mão.
