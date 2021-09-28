@@ -10,7 +10,6 @@ services:
       - nginx-com-nodejs
     depends_on:
       - db
-      - reverse-proxy
   db:
     image: mysql:5.7
     command: --innodb-use-native-aio=0
@@ -27,6 +26,8 @@ services:
     build: ./nginx
     ports:
       - "80:80"
+    depends_on:
+      - app
     networks:
       - nginx-com-nodejs
 

@@ -1,6 +1,5 @@
 const express = require('express');
 const faker = require('faker');
-const sequelize = require('sequelize');
 const People = require('./src/model/people');
 
 const { PORT } = require('./environment');
@@ -13,7 +12,10 @@ app.get('/', async (req, res) => {
   await People.create({ name });
 
   const listOfNames = await People.findAll();
-  const listOfNamesHtml = listOfNames.reduce((acc, name) => {}, '');
+  const listOfNamesHtml = listOfNames.reduce((acc, user) => {
+
+    return acc + user.name + '<br>';
+  }, '');
   const result = `<h1>Full Cycle Rocks!</h1><br>${listOfNamesHtml}`;
 
   res.status(200).send(result);
