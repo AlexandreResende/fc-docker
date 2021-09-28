@@ -1,7 +1,7 @@
 const express = require('express');
 const faker = require('faker');
 const sequelize = require('sequelize');
-const People = require('./model/people');
+const People = require('./src/model/people');
 
 const { PORT } = require('./environment');
 
