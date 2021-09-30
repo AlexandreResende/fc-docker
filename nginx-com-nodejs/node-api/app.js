@@ -6,7 +6,7 @@ const { PORT } = require('./environment');
 
 const app = express();
 
-app.get('/', async (req, res) => {
+app.get('/', async (_, res) => {
   const name = faker.name.firstName();
 
   await People.create({ name });
